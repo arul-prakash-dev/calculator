@@ -4,17 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input:focus {
+            border-color: #4caf50;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            background-color: #4caf50;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <center>
+
+    <div class="container">
         <h1>Grade Calculator</h1>
-        <input type="number" placeholder="Enter mark" name="mark1" id="mark1" required><br><br>
-        <input type="number" placeholder="Enter mark" name="mark2" id="mark2" required><br><br>
-        <input type="number" placeholder="Enter mark" name="mark3" id="mark3" required><br><br>
-        <input type="number" placeholder="Enter mark" name="mark4" id="mark4" required><br><br>
-        <input type="number" placeholder="Enter mark" name="mark5" id="mark5" required><br><br>
+        <input type="number" placeholder="Enter mark 1" id="mark1" required>
+        <input type="number" placeholder="Enter mark 2" id="mark2" required>
+        <input type="number" placeholder="Enter mark 3" id="mark3" required>
+        <input type="number" placeholder="Enter mark 4" id="mark4" required>
+        <input type="number" placeholder="Enter mark 5" id="mark5" required>
         <button onclick="grade()">Result</button>
-    </center>
+    </div>
 
     <script>
         function grade() {
@@ -26,10 +85,6 @@
 
             var total = mark1 + mark2 + mark3 + mark4 + mark5;
             var average = total / 5;
-
-            if(mark1 <35 || mark2 <35 || mark3 <35 || mark4 <35 || mark5 <35) {
-                alert("You have failed in one or more subjects. Please try again.");
-            }
 
             if (average >= 90) {
                 alert("Grade: A \nTotal Marks: " + total + "\nAverage: " + average);
