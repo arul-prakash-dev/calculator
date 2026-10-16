@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+</head>
+<body>
+    <center>
+        <h1>Grade Calculator</h1>
+        <input type="number" placeholder="Enter mark" name="mark1" id="mark1" required><br><br>
+        <input type="number" placeholder="Enter mark" name="mark2" id="mark2" required><br><br>
+        <input type="number" placeholder="Enter mark" name="mark3" id="mark3" required><br><br>
+        <input type="number" placeholder="Enter mark" name="mark4" id="mark4" required><br><br>
+        <input type="number" placeholder="Enter mark" name="mark5" id="mark5" required><br><br>
+        <button onclick="grade()">Result</button>
+    </center>
+
+    <script>
+        function grade() {
+            var mark1 = Number(document.getElementById("mark1").value);
+            var mark2 = Number(document.getElementById("mark2").value);
+            var mark3 = Number(document.getElementById("mark3").value);
+            var mark4 = Number(document.getElementById("mark4").value);
+            var mark5 = Number(document.getElementById("mark5").value);
+
+            var total = mark1 + mark2 + mark3 + mark4 + mark5;
+            var average = total / 5;
+
+            if(mark1 <35 || mark2 <35 || mark3 <35 || mark4 <35 || mark5 <35) {
+                alert("You have failed in one or more subjects. Please try again.");
+            }
+
+            if (average >= 90) {
+                alert("Grade: A \nTotal Marks: " + total + "\nAverage: " + average);
+            } else if (average >= 80) {
+                alert("Grade: B \nTotal Marks: " + total + "\nAverage: " + average);
+            } else if (average >= 70) {
+                alert("Grade: C \nTotal Marks: " + total + "\nAverage: " + average);
+            } else if (average >= 60) {
+                alert("Grade: D \nTotal Marks: " + total + "\nAverage: " + average);
+            } else {
+                alert("Grade: F \nTotal Marks: " + total + "\nAverage: " + average);
+            }
+        }
+    </script>
+</body>
+</html>
